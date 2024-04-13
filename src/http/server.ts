@@ -1,10 +1,9 @@
 import fastify from 'fastify';
+import { CreatePoll } from './routes/create-poll';
 
 const app = fastify();
 
-app.get('/', () => {
-  return `Hello Word!`
-})
+app.register(CreatePoll);
 
 app.listen({
   port: 3333
